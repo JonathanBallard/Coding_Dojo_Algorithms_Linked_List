@@ -132,4 +132,52 @@ class LinkedList{
         return total / this.length();
     }
 
+    back(){
+        var current = this.head;
+        if(current === null){
+            return "empty";
+        }
+
+        while(current){
+            if(current.next === null){
+                return current.value;
+                break;
+            }
+            current = current.next;
+        }
+    }
+
+
+    removeBack(){
+        var current = this.head;
+        if(current === null){
+            return "empty";
+        }
+
+        while(current){
+            if(current.next.next === null){
+                current.next = null;
+                break;
+            }
+            current = current.next;
+        }
+        return "complete";
+    }
+
+    addBack(value){
+        var current = this.head;
+        if(current === null){
+            return "empty";
+        }
+        var newNode = new ListNode(value);
+        while(current){
+            if(current.next === null){
+                current.next = newNode;
+                break;
+            }
+            current = current.next;
+        }
+
+    }
+
 }

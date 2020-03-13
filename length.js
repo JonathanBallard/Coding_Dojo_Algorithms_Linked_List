@@ -46,7 +46,7 @@ class LinkedList{
 
     length(){
         var current = this.head;
-        if(!current){
+        if(current === null){
             return 0;
         }
         var count = 1;
