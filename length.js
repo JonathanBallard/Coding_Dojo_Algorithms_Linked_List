@@ -1,5 +1,5 @@
 function ListNode(value) {
-    this.val = value;
+    this.value = value;
     this.next = null;
 }
 
@@ -37,6 +37,9 @@ class LinkedList{
             if(current.value == value){
                 return "found it";
             }
+            if(current.next === null){
+                break;
+            }
             current = current.next;
         }
     }
@@ -47,8 +50,11 @@ class LinkedList{
             return 0;
         }
         var count = 1;
-        while(current.next){
+        while(current){
             count++;
+            if(current.next === null){
+                break;
+            }
             current = current.next;
         }
         return count;

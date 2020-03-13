@@ -38,6 +38,9 @@ class LinkedList{
             if(current.value == value){
                 return "found it";
             }
+            if(current.next === null){
+                break;
+            }
             current = current.next;
         }
 

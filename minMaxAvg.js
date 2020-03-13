@@ -78,4 +78,58 @@ class LinkedList{
     }
 
 
+    max(){
+        var current = this.head;
+        if(!current){
+            return "empty";
+        }
+        var max = current.value;
+        while(current){
+            if(current.value > max){
+                max = current.value;
+            }
+            if(current.next === null){
+                break;
+            }
+            current = current.next;
+        }
+        return max;
+    }
+
+    min(){
+        var current = this.head;
+        if(!current){
+            return "empty";
+        }
+        var min = current.value;
+        while(current){
+            if(current.value < min){
+                min = current.value;
+            }
+            if(current.next === null){
+                break;
+            }
+            current = current.next;
+        }
+        return min;
+    }
+
+    min(){
+        var current = this.head;
+        var total = 0;
+        if(!current){
+            return "empty";
+        }
+
+        while(current){
+            total += current.value;
+            if(current.next === null){
+                break;
+            }
+            current = current.next;
+        }
+
+        return total / this.length();
+    }
+
 }
